@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  limit_on: 2012-10-28
+  done: false
+
+two:
+  title: MyString
+  description: MyText
+  limit_on: 2012-10-28
+  done: false
