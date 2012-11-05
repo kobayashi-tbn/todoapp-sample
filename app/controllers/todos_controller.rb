@@ -2,7 +2,8 @@ class TodosController < ApplicationController
   # GET /todos
   # GET /todos.json
   def index
-    @todos = Todo.all
+    #@todos = Todo.all
+    @todos = Todo.by_user(current_user)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +14,8 @@ class TodosController < ApplicationController
   # GET /todos/1
   # GET /todos/1.json
   def show
-    @todo = Todo.find(params[:id])
+    #@todo = Todo.find(params[:id])
+    @todo = Todo.by_user(current_user).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -41,6 +43,7 @@ class TodosController < ApplicationController
   # POST /todos.json
   def create
     @todo = Todo.new(params[:todo])
+    @todo.user = current_user
 
     respond_to do |format|
       if @todo.save

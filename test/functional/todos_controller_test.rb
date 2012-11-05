@@ -2,6 +2,7 @@ require 'test_helper'
 
 class TodosControllerTest < ActionController::TestCase
   setup do
+    post :create
     @todo = todos(:one)
   end
 

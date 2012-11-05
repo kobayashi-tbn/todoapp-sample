@@ -17,3 +17,7 @@
 # Ignore database.yml, original files
 /config/database.yml
 *.org
+
+# Ignore IDE config files
+/.idea/*
+
