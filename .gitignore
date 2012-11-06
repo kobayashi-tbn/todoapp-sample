@@ -19,5 +19,6 @@
 *.org
 
 # Ignore IDE config files
-/.idea/*
+/.idea/*.*
+/.idea
 
