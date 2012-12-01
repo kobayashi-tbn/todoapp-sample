@@ -4,4 +4,5 @@ class Todo < ActiveRecord::Base
   belongs_to :user, :foreign_key => :username
 
   scope :by_user, proc {|user| {:conditions => {:username => user.username}}}
+  leapfrog :username
 end
