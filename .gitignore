@@ -22,3 +22,6 @@
 /.idea/*.*
 /.idea
 
+# Ignore Gemfile.lock
+/Gemfile.lock
+
