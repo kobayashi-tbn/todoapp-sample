@@ -7,7 +7,9 @@
 one:
 # column: value
 #
+  username: 'admin'
   email: 'admin@example.com'
 two:
 #  column: value
+  username: 'foo'
   email: 'foo@example.com'

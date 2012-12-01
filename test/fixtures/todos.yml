@@ -5,9 +5,11 @@ one:
   description: MyText
   limit_on: 2012-10-28
   done: false
+  username: admin
 
 two:
-  title: MyString
-  description: MyText
+  title: MyString2
+  description: MyText2
   limit_on: 2012-10-28
   done: false
+  username: admin
