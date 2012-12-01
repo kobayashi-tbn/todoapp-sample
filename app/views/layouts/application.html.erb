@@ -7,7 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p class="notice"><%=notice%></p>
+<% if current_user %>
+    <div class="sign_out">
+    <%= link_to I18n.t('.sign_out'), destroy_user_session_path, :method => 'delete' %>
+    </div>
+<% end %>
+<p class="notice" id="notice"><%=notice%></p>
 <p class="alert"><%=alert%></p>
 <%= yield %>
 
