@@ -5,6 +5,7 @@ class CreateTodos < ActiveRecord::Migration
       t.text :description
       t.date :limit_on
       t.boolean :done
+      t.string :username
 
       t.timestamps
     end
