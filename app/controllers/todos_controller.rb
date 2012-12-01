@@ -5,6 +5,8 @@ class TodosController < ApplicationController
     #@todos = Todo.all
     @todos = Todo.by_user(current_user)
 
+    puts session
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @todos }
@@ -27,6 +29,7 @@ class TodosController < ApplicationController
   # GET /todos/new.json
   def new
     @todo = Todo.new
+    #@todo.limit_on = Time.now.strftime('%Y-%m-%d')
 
     respond_to do |format|
       format.html # new.html.erb
