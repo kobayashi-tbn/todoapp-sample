@@ -3,6 +3,8 @@ class Todo < ActiveRecord::Base
   #attr_accessor :user
   belongs_to :user, :foreign_key => :username
 
-  scope :by_user, proc {|user| {:conditions => {:username => user.username}}}
+  scope :by_user, proc {|user| {conditions: {username: user.username}}}
+  scope :incomplete, proc { {conditions: {done: false}}}
+  scope :complete, proc { {conditions: {done: true}}}
   leapfrog :username
 end

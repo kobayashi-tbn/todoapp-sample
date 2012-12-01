@@ -1,27 +1,6 @@
 <h1><%= t('.listing_todos') %></h1>
 
-<table>
-  <tr>
-    <th><%= t('.title') %></th>
-    <th><%= t('.description') %></th>
-    <th><%= t('.limit_on') %></th>
-    <th><%= t('.done') %></th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @todos.each do |todo| %>
-  <tr>
-    <td><%= link_to todo.title, todo %></td>
-    <td><%= todo.description %></td>
-    <td><%= todo.limit_on %></td>
-    <td><%= I18n.t(".#{todo.done}") %></td>
-    <td><%= link_to content_tag(:span, '', class: "ui-icon ui-icon-pencil") + I18n.t('.edit'), edit_todo_path(todo) %></td>
-    <td><%= link_to content_tag(:span, '', class: "ui-icon ui-icon-trash") + I18n.t('.destroy'), todo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<%= render 'todos' %>
 
 <br />
 

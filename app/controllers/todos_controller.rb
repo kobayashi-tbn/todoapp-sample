@@ -3,12 +3,25 @@ class TodosController < ApplicationController
   # GET /todos.json
   def index
     #@todos = Todo.all
-    @todos = Todo.by_user(current_user)
+    @todos = Todo.by_user(current_user).order(:limit_on)
+    @size_all = @todos.size
+    todo_complete = @todos.select{|todo| todo.done}
+    @size_complete = todo_complete.size
+    @size_incomplete = @size_all - @size_complete
+    if (params[:all])
+      #@todos = Todo.by_user(current_user).order(:limit_on)
+    elsif (params[:complete])
+      @todos = todo_complete #Todo.complete.by_user(current_user).order(:limit_on)
+    else
+      @todos -= todo_complete #Todo.incomplete.by_user(current_user).order(:limit_on)
+    end
+
 
     puts session
 
     respond_to do |format|
       format.html # index.html.erb
+      format.js   # for ajax
       format.json { render json: @todos }
     end
   end
@@ -29,7 +42,7 @@ class TodosController < ApplicationController
   # GET /todos/new.json
   def new
     @todo = Todo.new
-    #@todo.limit_on = Time.now.strftime('%Y-%m-%d')
+    @todo.limit_on = Time.now.strftime('%Y-%m-%d')
 
     respond_to do |format|
       format.html # new.html.erb
@@ -79,10 +92,16 @@ class TodosController < ApplicationController
   # DELETE /todos/1.json
   def destroy
     @todo = Todo.find(params[:id])
+    done = @todo.done
     @todo.destroy
-
+    if done
+      @todos = Todo.by_user(current_user).order(:limit_on)
+    else
+      @todos = Todo.incomplete.by_user(current_user).order(:limit_on)
+    end
     respond_to do |format|
       format.html { redirect_to todos_url }
+      format.js
       format.json { head :no_content }
     end
   end

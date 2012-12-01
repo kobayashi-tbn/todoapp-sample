@@ -1,0 +1,31 @@
+<div id="todo-list">
+<%= link_to content_tag(:span, t('.show_all'), class: "a-menu"), {action: :index, all: true}, remote: true %><%= "(#{@size_all})" %>&nbsp;&nbsp;
+<%= link_to content_tag(:span, '', class: "ui-icon ui-icon-flag") + content_tag(:span, t('.only_incomplete'),
+                                                                                class: "a-menu"), {action: :index, incomplete: true}, remote: true%><%= "(#{@size_incomplete})" %>&nbsp;&nbsp;
+<%= link_to content_tag(:span, '', class: "ui-icon ui-icon-check") + content_tag(:span, t('.only_complete'),
+                                                                                 class: "a-menu"), {action: :index, complete: true }, remote: true %><%= "(#{@size_complete})" %>
+
+<table class="todo-list">
+  <tr>
+    <th></th>
+    <th nowrap><%= t('.title') %></th>
+    <th class="description"><%= t('.description') %></th>
+    <th nowrap><%= t('.limit_on') %></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @todos.each do |todo| %>
+      <tr>
+        <td nowrap><%= content_tag(:span, '', class: "ui-icon ui-icon-flag") if !todo.done %>
+                   <%= content_tag(:span, '', class: "ui-icon ui-icon-check") if todo.done %></td>
+        <td nowrap><%= link_to todo.title, todo %></td>
+        <td><%= todo.description %></td>
+        <td nowrap><%= todo.limit_on %></td>
+        <td nowrap><%= link_to content_tag(:span, '', class: "ui-icon ui-icon-pencil") + I18n.t('.edit'), edit_todo_path(todo) %></td>
+        <td nowrap><%= link_to content_tag(:span, '', class: "ui-icon ui-icon-trash") + I18n.t('.destroy'), todo, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <% end %>
+</table>
+</div>

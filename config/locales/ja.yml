@@ -1,21 +1,24 @@
 ja:
 
   hello: "こんにちは　世界"
-  todo: "TODO"
   todos:
     show:
+      todo: "Todo"
       title: "タイトル"
       description: "内容"
       limit_on: "期限"
       done: "完了"
-
     index:
-      listing_todos: "Todo一覧"
+       listing_todos: "Todo一覧"
+       new_todo: "新規作成"
+    todos:
       title: "タイトル"
       description: "内容"
       limit_on: "期限"
       done: "完了"
-      new_todo: "新規作成"
+      show_all: "すべて表示"
+      only_incomplete: "未完了のみ"
+      only_complete: "完了のみ"
 
 
 
