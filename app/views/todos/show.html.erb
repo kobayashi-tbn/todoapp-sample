@@ -1,25 +1,24 @@
-<p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
+  <b><%= t('.title') %>:</b>
   <%= @todo.title %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b><%= t('.description') %>:</b>
   <%= @todo.description %>
 </p>
 
 <p>
-  <b>Limit on:</b>
+  <b><%= t('.limit_on') %>:</b>
   <%= @todo.limit_on %>
 </p>
 
 <p>
-  <b>Done:</b>
-  <%= @todo.done %>
+  <b><%= t('.done') %>:</b>
+  <%= t(".#{@todo.done}") %>
 </p>
 
 
-<%= link_to 'Edit', edit_todo_path(@todo) %> |
-<%= link_to 'Back', todos_path %>
+<%= link_to I18n.t('.edit'), edit_todo_path(@todo) %> |
+<%= link_to I18n.t('.back'), todos_path %>
