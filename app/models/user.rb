@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   attr_accessor :login
-  set_primary_key :username
+  #set_primary_key 'username'
   #self.primary_key = :username
   has_many :todos, :foreign_key => :username
 
