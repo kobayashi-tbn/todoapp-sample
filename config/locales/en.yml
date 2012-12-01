@@ -3,3 +3,13 @@
 
 en:
   hello: "Hello world"
+
+
+  'true': "Yes"
+  'false': "No"
+
+  edit: "Edit"
+  back: "Back"
+  show: "Show"
+  destroy: "Destroy"
+  sign_out: "Sign out"
