@@ -1,19 +1,18 @@
 class TodosController < ApplicationController
+  before_filter :prepare_todos, only: [:index]
+
   # GET /todos
   # GET /todos.json
   def index
     #@todos = Todo.all
-    @todos = Todo.by_user(current_user).order(:limit_on)
-    @size_all = @todos.size
-    todo_complete = @todos.select{|todo| todo.done}
-    @size_complete = todo_complete.size
-    @size_incomplete = @size_all - @size_complete
-    if (params[:all])
-      #@todos = Todo.by_user(current_user).order(:limit_on)
-    elsif (params[:complete])
-      @todos = todo_complete #Todo.complete.by_user(current_user).order(:limit_on)
+    session[:todo_list_cond] = params[:todo_list_cond]
+
+    if (params[:todo_list_cond] == 'all')
+      # no op
+    elsif (params[:todo_list_cond] == 'complete')
+      @todos = @todos_complete
     else
-      @todos -= todo_complete #Todo.incomplete.by_user(current_user).order(:limit_on)
+      @todos -= @todos_complete
     end
 
 
@@ -94,15 +93,31 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
     done = @todo.done
     @todo.destroy
-    if done
-      @todos = Todo.by_user(current_user).order(:limit_on)
+    prepare_todos
+
+    if session[:todo_list_cond] == :all
+      # no op
+    elsif session[:todo_list_cond] == :complete
+      @todos = @todos_complete
     else
-      @todos = Todo.incomplete.by_user(current_user).order(:limit_on)
+      @todos -= @todos_complete
     end
+
     respond_to do |format|
       format.html { redirect_to todos_url }
       format.js
       format.json { head :no_content }
     end
   end
+
+  private
+
+  def prepare_todos
+    @todos = Todo.by_user(current_user).order(:limit_on)
+    @size_all = @todos.size
+    @todos_complete = @todos.select{|todo| todo.done}
+    @size_complete = @todos_complete.size
+    @size_incomplete = @size_all - @size_complete
+  end
+
 end
