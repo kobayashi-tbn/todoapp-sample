@@ -38,3 +38,6 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'devise'
+
+gem 'leapfrog', :git => 'git://github.com/kobayashi-tbn/leapfrog.git', :branch => 'ticket-2'
+#gem 'leapfrog', :path => '/Users/toshinobu/NetBeansProjects/leapfrog30/vendor/plugins/leapfrog' #:git => 'git://github.com/kobayashi-tbn/leapfrog.git' #, :branch => 'ticket-1'
