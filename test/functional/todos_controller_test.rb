@@ -2,8 +2,12 @@ require 'test_helper'
 
 class TodosControllerTest < ActionController::TestCase
   setup do
+    @user = users(:one)
+    sign_in @user
+
     post :create
     @todo = todos(:one)
+    @todo2 = todos(:two)
   end
 
   test "should get index" do
@@ -19,7 +23,7 @@ class TodosControllerTest < ActionController::TestCase
 
   test "should create todo" do
     assert_difference('Todo.count') do
-      post :create, todo: { description: @todo.description, done: @todo.done, limit_on: @todo.limit_on, title: @todo.title }
+      post :create, todo: { description: @todo.description, done: @todo.done, limit_on: @todo.limit_on, title: @todo.title, username: @user.username }
     end
 
     assert_redirected_to todo_path(assigns(:todo))
@@ -36,7 +40,7 @@ class TodosControllerTest < ActionController::TestCase
   end
 
   test "should update todo" do
-    put :update, id: @todo, todo: { description: @todo.description, done: @todo.done, limit_on: @todo.limit_on, title: @todo.title }
+    put :update, id: @todo2, todo: { description: @todo2.description << " update", done: @todo2.done, limit_on: @todo2.limit_on, title: @todo2.title }
     assert_redirected_to todo_path(assigns(:todo))
   end
 
