@@ -1,20 +1,17 @@
 class TodosController < ApplicationController
   before_filter :prepare_todos, only: [:index]
+  before_filter :prepare_todo, only: [:show, :edit, :update, :destroy]
 
   # GET /todos
   # GET /todos.json
   def index
-    #@todos = Todo.all
-    session[:todo_list_cond] = params[:todo_list_cond]
-
-    if (params[:todo_list_cond] == 'all')
+    if (session[:todo_list_cond] == 'all')
       # no op
-    elsif (params[:todo_list_cond] == 'complete')
+    elsif (session[:todo_list_cond] == 'complete')
       @todos = @todos_complete
     else
       @todos -= @todos_complete
     end
-
 
     puts session
 
@@ -51,7 +48,7 @@ class TodosController < ApplicationController
 
   # GET /todos/1/edit
   def edit
-    @todo = Todo.find(params[:id])
+    #@todo = Todo.find(params[:id])
   end
 
   # POST /todos
@@ -74,7 +71,7 @@ class TodosController < ApplicationController
   # PUT /todos/1
   # PUT /todos/1.json
   def update
-    @todo = Todo.find(params[:id])
+    #@todo = Todo.find(params[:id])
 
     respond_to do |format|
       if @todo.update_attributes(params[:todo])
@@ -90,8 +87,6 @@ class TodosController < ApplicationController
   # DELETE /todos/1
   # DELETE /todos/1.json
   def destroy
-    @todo = Todo.find(params[:id])
-    done = @todo.done
     @todo.destroy
     prepare_todos
 
@@ -112,7 +107,17 @@ class TodosController < ApplicationController
 
   private
 
+  def prepare_todo
+    begin
+      @todo = Todo.by_user(current_user).find(params[:id])
+    rescue ActiveRecord::RecordNotFound => e
+      redirect_to todos_url, notice: I18n.t(".data_not_found", data_name: 'Todo')
+    end
+  end
+
   def prepare_todos
+    session[:todo_list_cond] = params[:todo_list_cond] if params[:todo_list_cond]
+
     @todos = Todo.by_user(current_user).order(:limit_on)
     @size_all = @todos.size
     @todos_complete = @todos.select{|todo| todo.done}
