@@ -24,7 +24,7 @@
         <td><%= todo.description %></td>
         <td nowrap><%= todo.limit_on %></td>
         <td nowrap><%= link_to content_tag(:span, '', class: "ui-icon ui-icon-pencil") + I18n.t('.edit'), edit_todo_path(todo) %></td>
-        <td nowrap><%= link_to content_tag(:span, '', class: "ui-icon ui-icon-trash") + I18n.t('.destroy'), todo, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td nowrap><%= link_to content_tag(:span, '', class: "ui-icon ui-icon-trash") + I18n.t('.destroy'), todo, remote: true, method: :delete, message: I18n.t('.are_you_sure?'), data: { confirm: 'Are you sure?' } %></td>
       </tr>
   <% end %>
 </table>
