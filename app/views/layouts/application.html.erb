@@ -8,10 +8,11 @@
 </head>
 <body>
 <div id="container">
+<div id="custom-dialog"></div>
 
 <% if current_user %>
     <div class="sign_out">
-    <%= link_to I18n.t('.sign_out'), destroy_user_session_path, :method => 'delete' %>
+    <%= link_to I18n.t('.sign_out'), destroy_user_session_path, :method => 'delete',message: I18n.t('.are_you_sure?'), data: {confirm: 'Are you sure?'} %>
     </div>
 <% end %>
 <p class="notice" id="notice"><%=notice%></p>
