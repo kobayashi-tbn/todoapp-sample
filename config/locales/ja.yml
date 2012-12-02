@@ -30,4 +30,6 @@ ja:
   show: "照会"
   destroy: "削除"
   sign_out: "サインアウト"
+  data_not_found: "%{data_name}が見つかりませんでした。"
+  are_you_sure?: "よろしいですか？"
 

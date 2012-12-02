@@ -13,3 +13,5 @@ en:
   show: "Show"
   destroy: "Destroy"
   sign_out: "Sign out"
+  data_not_found: "%{data_name} not found."
+  are_you_sure?: "Are you sure?"
