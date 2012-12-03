@@ -1,0 +1,10 @@
+# For Travis CI setting
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: todoapp_test
+  pool: 5
+  username: postgres
+  password:
+
