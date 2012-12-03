@@ -43,7 +43,7 @@ test:
   encoding: unicode
   database: todoapp_test
   pool: 5
-  username: todoapp
+  username: postgres
   password: 
 
 production:
