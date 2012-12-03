@@ -1,6 +1,7 @@
 before_script:
   - mv config/database.yml.example config/database.yml
   - psql -c 'create database todoapp_test;' -U postgres
+  - rake db:migrate
 language: ruby
 env:
   - DB = postgres
