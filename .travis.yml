@@ -1,3 +1,5 @@
+before_script:
+  - mv config/database.yml.example config/database.yml
 language: ruby
 env:
   - DB = postgres
