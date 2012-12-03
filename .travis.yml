@@ -2,6 +2,7 @@ before_script:
   - mv config/database.yml.example config/database.yml
   - psql -c 'create database todoapp_test;' -U postgres
   - rake db:migrate
+  - psql -c 'ALTER TABLE users ADD PRIMARY KEY (username);' -U postgres
 language: ruby
 env:
   - DB = postgres
