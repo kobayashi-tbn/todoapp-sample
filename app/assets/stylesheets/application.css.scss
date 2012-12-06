@@ -9,11 +9,14 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
- *= require_tree ./jquery-ui
- *= require jquery-ui/jquery-ui-1.9.2.custom.css
  *= require vendor
+ *= require_tree .
  */
+
+/*
+require_tree ./jquery-ui
+require jquery-ui/jquery-ui-1.9.2.custom.css
+*/
 
 .sign_out {
   margin-left: auto;
