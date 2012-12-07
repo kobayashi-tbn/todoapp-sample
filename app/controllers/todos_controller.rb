@@ -31,6 +31,7 @@ class TodosController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
+      format.mobile # show.moble.erb
       format.json { render json: @todo }
     end
   end
@@ -62,9 +63,11 @@ class TodosController < ApplicationController
     respond_to do |format|
       if @todo.save
         format.html { redirect_to @todo, notice: 'Todo was successfully created.' }
+        format.mobile { redirect_to @todo, notice: 'Todo was successfully created.' }
         format.json { render json: @todo, status: :created, location: @todo }
       else
         format.html { render action: "new" }
+        format.mobile { render action: "new" }
         format.json { render json: @todo.errors, status: :unprocessable_entity }
       end
     end
@@ -78,9 +81,11 @@ class TodosController < ApplicationController
     respond_to do |format|
       if @todo.update_attributes(params[:todo])
         format.html { redirect_to @todo, notice: 'Todo was successfully updated.' }
+        format.mobile { redirect_to @todo, notice: 'Todo was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
+        format.mobile { render action: "edit" }
         format.json { render json: @todo.errors, status: :unprocessable_entity }
       end
     end
@@ -102,6 +107,7 @@ class TodosController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to todos_url }
+      format.mobile { redirect_to todos_url }
       format.js
       format.json { head :no_content }
     end

@@ -12,11 +12,37 @@
 //
 //= require jquery
 //= require jquery-ui
+//= require ./jquery-mobile/jquery.mobile-1.2.0
 //= require jquery_ujs
 //= require_tree .
 
 //$(".datepicker").datepicker();
 
-$(document).ready(function(){
-    $( ".datepicker" ).datepicker({dateFormat: 'yy-mm-dd'});
+//$(document).ready(function(){
+//    $( ".datepicker" ).datepicker({dateFormat: 'yy-mm-dd'});
+//});
+
+// Swipe to Delete
+$(function(){
+    $('div').live('pageshow',function(event,ui){
+        if ( event.target.id.indexOf('swipedelete') >= 0) {
+            // remove any existing swipe areas
+            $('.aDeleteBtn').remove();
+            // add swipe event to the list item
+            $('ul li').bind('swiperight', function(e){
+                // reference the just swiped list item
+                var $li = $(this);
+                // remove all buttons first
+                $('.aDeleteBtn').remove();
+                // create buttons and div container
+                var $deleteBtn = $('<a>Delete</a>').attr({
+                    'class': 'aDeleteBtn ui-btn-up-r',
+                    'href': '?nID=' + $li.data('nid'),
+                    'method': 'delete'
+                });
+                // insert swipe div into list item
+                $li.prepend($deleteBtn);
+            });
+        }
+    });
 });
