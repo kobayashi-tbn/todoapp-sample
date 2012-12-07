@@ -17,6 +17,7 @@ class TodosController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
+      format.mobile # index.mobile.erb
       format.js   # for ajax
       format.json { render json: @todos }
     end
@@ -42,6 +43,7 @@ class TodosController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
+      format.mobile # new.mobile.erb
       format.json { render json: @todo }
     end
   end

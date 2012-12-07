@@ -12,9 +12,8 @@
 //
 //= require jquery
 //= require jquery-ui
-// require_tree ../../../vendor
 //= require jquery_ujs
-//= require_directory .
+//= require_tree .
 
 //$(".datepicker").datepicker();
 

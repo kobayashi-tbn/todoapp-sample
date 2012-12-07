@@ -1,0 +1,8 @@
+<header data-role="header">
+<h1><%= t('.listing_todos') %></h1>
+</header>
+<%= render 'todos' %>
+
+<br />
+
+<%= link_to content_tag(:span, '', class: "ui-icon ui-icon-plusthick") + t('.new_todo').html_safe, new_todo_path %>

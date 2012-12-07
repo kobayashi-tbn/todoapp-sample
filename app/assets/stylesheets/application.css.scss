@@ -10,18 +10,19 @@
  *
  *= require_self
  *= require vendor
- *= require_tree .
+ *= require_directory .
  */
 
-/*
-require_tree ./jquery-ui
-require jquery-ui/jquery-ui-1.9.2.custom.css
-*/
-
-.sign_out {
+.sign-out {
   margin-left: auto;
   margin-right: 50px;
   text-align: right;
+}
+
+.ua-type {
+  margin-left: auto;
+  margin-right: 50px;
+  text-align: center;
 }
 
 body {

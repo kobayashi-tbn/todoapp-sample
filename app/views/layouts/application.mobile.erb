@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todoapp</title>
+  <%= stylesheet_link_tag    "mobile/application", media: "all" %>
+  <%= javascript_include_tag "mobile/application" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, scale=1">
+</head>
+<body>
+<div id="container">
+
+<% if current_user %>
+    <div class="sign-out">
+    <%= link_to I18n.t('.sign_out'), destroy_user_session_path, confirm: I18n.t('.are_you_sure?') %>
+    </div>
+<% end %>
+<p class="notice" id="notice"><%=notice%></p>
+<p class="alert"><%=alert%></p>
+<%= yield %>
+
+<div class="ua-type">
+<%= link_to 'PC', {mobile: 0}, data: {ajax: 'false'} %>
+</div>
+</div>
+</body>
+</html>

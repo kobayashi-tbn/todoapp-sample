@@ -1,0 +1,8 @@
+<h1>Home#index</h1>
+<% if current_user %>
+  <%= link_to 'Sign-out', destroy_user_session_path, :method => 'delete' %>
+  <hr/>
+  <%= link_to 'Todo App', todos_path %>
+<% else %>
+  <%= link_to 'Sgin-in', user_session_path %>
+<% end %>

@@ -1,0 +1,24 @@
+<h1><%= t('.todo') %></h1>
+<p>
+  <b><%= t('.title') %>:</b>
+  <%= @todo.title %>
+</p>
+
+<p>
+  <b><%= t('.description') %>:</b>
+  <%= @todo.description %>
+</p>
+
+<p>
+  <b><%= t('.limit_on') %>:</b>
+  <%= @todo.limit_on %>
+</p>
+
+<p>
+  <b><%= t('.done') %>:</b>
+  <%= t(".#{@todo.done}") %>
+</p>
+
+
+<%= link_to I18n.t('.edit'), edit_todo_path(@todo) %> |
+<%= link_to I18n.t('.back'), todos_path %>
