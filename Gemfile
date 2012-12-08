@@ -37,7 +37,11 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
+# If 'Could not find a JavaScript runtime' then
+# gem 'execjs'
+# gem 'therubyracer'
+
 gem 'devise'
 
-gem 'leapfrog', :git => 'git://github.com/kobayashi-tbn/leapfrog.git', :branch => 'ticket-2'
+gem 'leapfrog', :git => 'git://github.com/kobayashi-tbn/leapfrog.git'
 #gem 'leapfrog', :path => '/Users/toshinobu/NetBeansProjects/leapfrog30/vendor/plugins/leapfrog' #:git => 'git://github.com/kobayashi-tbn/leapfrog.git' #, :branch => 'ticket-1'
