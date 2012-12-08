@@ -1,4 +1,4 @@
-<div id="todo-list swipedelete">
+<div id="todo-list">
 <%= link_to content_tag(:span, t('.show_all'), class: "a-menu"), {action: :index, todo_list_cond: :all}%>
   <%= "(#{@size_all})" %>&nbsp;&nbsp;
 <%= link_to content_tag(:span, '', class: "ui-icon ui-icon-flag") + content_tag(:span, t('.only_incomplete'), class: "a-menu"), {action: :index, todo_list_cond: :incomplete}%>
