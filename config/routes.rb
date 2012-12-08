@@ -1,4 +1,8 @@
 Todoapp::Application.routes.draw do
+  resources :users_roles
+
+  resources :roles
+
   get "home/index"
 
   devise_for :users

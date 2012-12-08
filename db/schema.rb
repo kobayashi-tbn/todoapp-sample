@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121114151159) do
+ActiveRecord::Schema.define(:version => 20121208065624) do
+
+  create_table "roles", :id => false, :force => true do |t|
+    t.integer  "role_id",    :null => false
+    t.string   "name",       :null => false
+    t.string   "notice"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "todos", :force => true do |t|
     t.string   "title"
@@ -43,5 +51,16 @@ ActiveRecord::Schema.define(:version => 20121114151159) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "users_roles", :force => true do |t|
+    t.string   "username",   :null => false
+    t.integer  "role_id",    :null => false
+    t.string   "created_by"
+    t.string   "updated_by"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "users_roles", ["username", "role_id"], :name => "index_users_roles_on_username_and_role_id", :unique => true
 
 end

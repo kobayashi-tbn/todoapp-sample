@@ -15,7 +15,9 @@ class User < ActiveRecord::Base
   attr_accessor :login
   #set_primary_key 'username'
   self.primary_key = :username
-  has_many :todos, :foreign_key => :username
+  has_many :todos, foreign_key: :username
+  has_many :users_roles, foreign_key: :username
+  has_many :roles, through: :users_roles #, foreign_key: 'role_id'
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
