@@ -1,7 +1,9 @@
 ja:
   date:
-    order: [ 'year', 'month', 'day' ]
-
+    order:
+      - :year
+      - :month
+      - :day
   hello: "こんにちは　世界"
   todos:
     show:
