@@ -27,7 +27,7 @@ class TodosController < ApplicationController
   # GET /todos/1.json
   def show
     #@todo = Todo.find(params[:id])
-    @todo = Todo.by_user(current_user).find(params[:id])
+    #@todo = Todo.by_user(current_user).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
