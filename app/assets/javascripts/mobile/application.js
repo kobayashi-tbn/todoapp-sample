@@ -26,8 +26,7 @@ $(document).ready(function(){
 //    $( ".datepicker" ).datepicker({dateFormat: 'yy-mm-dd'});
 
 });
-alert("delete");
-$(".delete").attr("method", "delete");
+
 //$(document).ready(function(){
 //    //create a datepicker with default settings
 //    $("#scroller").scroller({ preset : 'date', dateFormat : 'yy-mm-dd',  dateOrder : 'yymmd' });
