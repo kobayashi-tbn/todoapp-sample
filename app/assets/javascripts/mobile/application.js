@@ -14,18 +14,20 @@
 // require ./custom
 // require ./jquery-mobile/jquery.mobile-1.2.0
 // require jquery_ujs
-// require jq.mobi
-// require jq.mobi_ujs
-//= require jq.ui
+//= require jq.mobi
+//= require jq.mobi_ujs
+// require jq.ui
 // require ./mobiscroll/mobiscroll-2.2.custom.min
 // require_tree .
 
 //$(".datepicker").datepicker();
 
-//$(document).ready(function(){
+$(document).ready(function(){
 //    $( ".datepicker" ).datepicker({dateFormat: 'yy-mm-dd'});
-//});
 
+});
+alert("delete");
+$(".delete").attr("method", "delete");
 //$(document).ready(function(){
 //    //create a datepicker with default settings
 //    $("#scroller").scroller({ preset : 'date', dateFormat : 'yy-mm-dd',  dateOrder : 'yymmd' });
