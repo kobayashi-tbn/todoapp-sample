@@ -18,18 +18,15 @@
 //      $.ui.autoLaunch = true; //By default, it is set to true and you're app will run right away.  We set it to false to show a splashscreen
       /* This function runs when the body is loaded.*/
       var init = function () {
-          alert("start2");
           $.ui.backButtonText = "Back";// We override the back button text to always say "Back"
           window.setTimeout(function () {
               $.ui.launch();
           }, 1500);//We wait 1.5 seconds to call $.ui.launch after DOMContentLoaded fires
       };
-      alert("start3");
 
       document.addEventListener("DOMContentLoaded", init, false);
       $.ui.ready(function () {
           //This function will get executed when $.ui.launch has completed
-//          $("#delete").attr("method", "delete");
       });s
 
 
@@ -43,7 +40,6 @@
 
       };
       document.addEventListener("appMobi.device.ready", onDeviceReady, false);
-      alert($("#delete"));
 
   </script>
 </head>
