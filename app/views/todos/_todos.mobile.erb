@@ -1,14 +1,18 @@
 <div id="todo-list">
-<%= link_to content_tag(:span, t('.show_all'), class: "a-menu"), {action: :index, todo_list_cond: :all}%>
+<%= link_to content_tag(:span, t('.show_all'), class: "a-menu"), {action: :index, todo_list_cond: :all}, data: {ajax: false} %>
   <%= "(#{@size_all})" %>&nbsp;&nbsp;
-<%= link_to content_tag(:span, '', class: "ui-icon ui-icon-flag") + content_tag(:span, t('.only_incomplete'), class: "a-menu"), {action: :index, todo_list_cond: :incomplete}%>
+<%= link_to content_tag(:span, '', class: "ui-icon ui-icon-flag") + content_tag(:span, t('.only_incomplete'),
+                                                                                class: "a-menu"),
+            {action: :index, todo_list_cond: :incomplete}, data: {ajax: false} %>
   <%= "(#{@size_incomplete})" %>&nbsp;&nbsp;
-<%= link_to content_tag(:span, '', class: "ui-icon ui-icon-check") + content_tag(:span, t('.only_complete'), class: "a-menu"), {action: :index, todo_list_cond: :complete} %>
+<%= link_to content_tag(:span, '', class: "ui-icon ui-icon-check") + content_tag(:span, t('.only_complete'),
+                                                                                 class: "a-menu"),
+            {action: :index, todo_list_cond: :complete}, data: {ajax: false} %>
   <%= "(#{@size_complete})" %>
 
 <ul data-role="listview">
   <% @todos.each do |todo| %>
-   <li><%= link_to todo.title, todo %></li>
+   <li><%= link_to todo.title, todo, data: {ajax: false} %></li>
   <% end %>
 </ul>
 

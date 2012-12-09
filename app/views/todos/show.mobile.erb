@@ -20,5 +20,5 @@
 </p>
 
 
-<%= link_to I18n.t('.edit'), edit_todo_path(@todo) %> |
-<%= link_to I18n.t('.back'), todos_path %>
+<%= link_to I18n.t('.edit'), edit_todo_path(@todo), data: {ajax: false} %> |
+<%= link_to I18n.t('.back'), todos_path, data: {ajax: false} %>

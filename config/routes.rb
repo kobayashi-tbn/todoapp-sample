@@ -1,7 +1,4 @@
 Todoapp::Application.routes.draw do
-  resources :users_roles
-
-  resources :roles
 
   get "home/index"
 
@@ -71,6 +68,8 @@ Todoapp::Application.routes.draw do
   scope '(:locale)' do
     #devise_for :users
     resources :todos
+    resources :users_roles
+    resources :roles
     root :to => 'home#index'
   end
 end

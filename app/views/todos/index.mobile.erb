@@ -5,4 +5,5 @@
 
 <br />
 
-<%= link_to content_tag(:span, '', class: "ui-icon ui-icon-plusthick") + t('.new_todo').html_safe, new_todo_path %>
+<%= link_to content_tag(:span, '', class: "ui-icon ui-icon-plusthick") + t('.new_todo').html_safe, new_todo_path,
+            data: {ajax: false} %>
