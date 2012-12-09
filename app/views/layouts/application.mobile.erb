@@ -6,20 +6,55 @@
   <%= javascript_include_tag "mobile/application", debug: true %>
   <%= csrf_meta_tags %>
 
-  <meta name="viewport" content="width=device-width, scale=1">
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <link rel="stylesheet" type="text/css" href="//cdn.jqmobi.com/themes/icons.css" />
+  <link rel="stylesheet" type="text/css" href="//cdn.jqmobi.com/themes/jq.ui.frosty.css" title="eco" />
+  <script type="text/javascript">
+
+      var webRoot = "./";
+      $.ui.autoLaunch = false; //By default, it is set to true and you're app will run right away.  We set it to false to show a splashscreen
+//      $.ui.autoLaunch = true; //By default, it is set to true and you're app will run right away.  We set it to false to show a splashscreen
+      /* This function runs when the body is loaded.*/
+      var init = function () {
+          $.ui.backButtonText = "Back";// We override the back button text to always say "Back"
+          window.setTimeout(function () {
+              $.ui.launch();
+          }, 1500);//We wait 1.5 seconds to call $.ui.launch after DOMContentLoaded fires
+      };
+      document.addEventListener("DOMContentLoaded", init, false);
+      $.ui.ready(function () {
+          //This function will get executed when $.ui.launch has completed
+      });
+
+
+      /* This code is used for appMobi native apps */
+      var onDeviceReady = function () {
+          AppMobi.device.setRotateOrientation("portrait");
+          AppMobi.device.setAutoRotate(false);
+          webRoot = AppMobi.webRoot + "/";
+          //hide splash screen
+          AppMobi.device.hideSplashScreen();
+
+      };
+      document.addEventListener("appMobi.device.ready", onDeviceReady, false);
+  </script>
 </head>
 <body>
-<div id="container">
+<div id="jQUi">
+  <div data-role="header" id="header">
+    <h1>Todo</h1>
+    <% if current_user %>
+          <%= link_to I18n.t('.sign_out'), destroy_user_session_path({mobile: 0}),  {class: "button sign-out", method: 'delete', confirm: I18n.t('.are_you_sure?')}  %>
+    <% end %>
+  </div>
+  <div id="content">
 
-<% if current_user %>
-    <div class="sign-out">
-    <%= link_to I18n.t('.sign_out'), destroy_user_session_path, confirm: I18n.t('.are_you_sure?') %>
-    </div>
-<% end %>
-<p class="notice" id="notice"><%=notice%></p>
-<p class="alert"><%=alert%></p>
+<!-- p class="notice" id="notice"><%#=notice%></p -->
+<!-- p class="alert"><%#=alert%></p -->
 <%= yield %>
-
+</div>
 <div class="ua-type">
 <%= link_to 'PC', {mobile: 0}, data: {ajax: 'false'} %>
 </div>

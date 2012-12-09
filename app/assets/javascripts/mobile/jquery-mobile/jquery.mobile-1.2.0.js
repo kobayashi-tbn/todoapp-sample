@@ -12,7 +12,7 @@
 (function ( root, doc, factory ) {
     if ( typeof define === "function" && define.amd ) {
         // AMD. Register as an anonymous module.
-        define( [ "../../../../../../../.rvm/gems/ruby-1.9.3-p194@tb/gems/jquery-rails-2.1.4/vendor/assets/javascripts/jquery" ], function ( $ ) {
+        define( [ "jquery" ], function ( $ ) {
             factory( $, root, doc );
             return $.mobile;
         });

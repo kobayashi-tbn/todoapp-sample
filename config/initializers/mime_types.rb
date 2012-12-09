@@ -5,3 +5,7 @@
 # Mime::Type.register_alias "text/html", :iphone
 
 Mime::Type.register_alias "text/html", :mobile
+
+ActionController::Responder.class_eval do
+  alias :to_mobile :to_html
+end

@@ -9,11 +9,11 @@
                                                                                  class: "a-menu"),
             {action: :index, todo_list_cond: :complete}, data: {ajax: false} %>
   <%= "(#{@size_complete})" %>
-
+<div data-role="content">
 <ul data-role="listview">
   <% @todos.each do |todo| %>
    <li><%= link_to todo.title, todo, data: {ajax: false} %></li>
   <% end %>
 </ul>
-
+</div>
 </div>

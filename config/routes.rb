@@ -71,5 +71,6 @@ Todoapp::Application.routes.draw do
     resources :users_roles
     resources :roles
     root :to => 'home#index'
+    #root :to => 'home#index2'
   end
 end
