@@ -13,9 +13,12 @@
 //= require jquery
 // require jquery-ui
 //= require ./custom
-//= require ./jquery-mobile/jquery.mobile-1.2.0
-//= require jquery_ujs
-//= require_tree .
+// require ./jquery-mobile/jquery.mobile-1.2.0
+//= require jq.mobi
+// require jquery_ujs
+//= require jq.mobi_ujs
+// require_tree .
+//= require_directory .
 
 //$(".datepicker").datepicker();
 
