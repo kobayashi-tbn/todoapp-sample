@@ -11,7 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery-ui
+// require jquery-ui
+//= require ./custom
 //= require ./jquery-mobile/jquery.mobile-1.2.0
 //= require jquery_ujs
 //= require_tree .
@@ -21,3 +22,38 @@
 //$(document).ready(function(){
 //    $( ".datepicker" ).datepicker({dateFormat: 'yy-mm-dd'});
 //});
+
+
+
+//$(document).ready(function(){
+//    // create a datepicker with default settings
+////    jQuery.scroller.formatDate('yy:mm-dd',$(".scroller").val());
+////    alert($(".scroller").val());
+//    $(".date-selector").scroller({ dateFormat:'yy-mm-dd', dateOrder:'ymd' });
+//});
+
+//$(document).ready(function(){
+//
+//    var curr = new Date().getFullYear();
+//    var opt = {
+//
+//    }
+//
+//    opt.date = {preset : 'date'};
+//    opt.datetime = { preset : 'datetime', minDate: new Date(2012,3,10,9,22), maxDate: new Date(2014,7,30,15,44), stepMinute: 5  };
+//    opt.time = {preset : 'time'};
+//    <!--Script-->
+//
+//    $('select.changes').bind('change', function() {
+//        var demo = $('#demo').val();
+//        $(".demos").hide();
+//        if (!($("#demo_"+demo).length))
+//            demo = 'default';
+//
+//        $("#demo_" + demo).show();
+//        $('#scroller').val('').scroller('destroy').scroller($.extend(opt[$('#demo').val()], { theme: $('#theme').val(), mode: $('#mode').val(), display: $('#display').val(), lang: $('#language').val() }));
+//    });
+//
+//    $('#demo').trigger('change');
+//});
+

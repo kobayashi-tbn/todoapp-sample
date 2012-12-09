@@ -28,3 +28,4 @@ $.rails.showConfirmDialog = (link) ->
         $.rails.confirmed link
         $(this).dialog "close"
 
+
