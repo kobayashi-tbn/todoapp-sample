@@ -46,7 +46,9 @@
   <div data-role="header" id="header">
     <h1>Todo</h1>
     <% if current_user %>
-          <%= link_to I18n.t('.sign_out'), destroy_user_session_path({mobile: 0}),  {class: "button sign-out", method: 'delete', confirm: I18n.t('.are_you_sure?')}  %>
+        <div class="sign-out">
+          <%= link_to I18n.t('.sign_out'), destroy_user_session_path(mobile: 0), data: {ajax: 'false'}, class: "button", method: 'delete', confirm: I18n.t('.are_you_sure?') %>
+        </div>
     <% end %>
   </div>
   <div id="content">
