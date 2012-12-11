@@ -1,6 +1,6 @@
 <div data-role="header" id="header">
-  <%= link_to 'Back', todos_path, class: 'ui-btn-left', data: {role: :button, icon: 'arrow-l',transition: :slide, direction: :reverse} %>
   <h1 id="pageTitle" class><%= t('.todo') %></h1>
+  <%= link_to 'Back', todos_path, class: 'ui-btn-left', data: {role: :button, icon: 'arrow-l',transition: :slide, direction: :reverse} %>
   <%= link_to I18n.t('.edit'), edit_todo_path(@todo), class: 'ui-btn-right' %>
 </div>
 
