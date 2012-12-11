@@ -1,4 +1,4 @@
-<%= form_for(@todo) do |f| %>
+  <%= form_for(@todo) do |f| %>
   <% if @todo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
@@ -10,28 +10,23 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
+  <p>
     <%= f.label :title %><br />
     <%= f.text_field :title %>
-  </div>
-  <div class="field">
+  </p>
+  <p>
     <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%#= f.label :limit_on %><br />
-    <%#= f.date_select :limit_on, {use_month_numbers: true, order: [:year, :month, :day]} %>
-  </div>
-  <div class="field">
+    <%= f.text_area :description, rows: "1"%>
+  </p>
+  <p>
     <%= f.label :limit_on %><br />
     <%= f.text_field :limit_on, id: 'scroller', readonly: 'readonly' %>
-  </div>
-  <div class="field">
-    <%= f.label :done %><br />
-    <%= f.check_box :done %>
-  </div>
-  <div class="actions">
+  </p>
+  <p>
+    <%= f.check_box :done ,{}, true, "0" %>
+    <%= f.label :done %>
+  </p>
+  <p class="actions">
     <%= f.submit %>
-  </div>
+  </p>
 <% end %>

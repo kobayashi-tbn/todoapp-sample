@@ -1,4 +1,9 @@
-<h1><%= t('.todo') %></h1>
+<div data-role="header" id="header">
+  <%= link_to 'Back', todos_path, class: 'ui-btn-left', data: {role: :button, icon: 'arrow-l',transition: :slide, direction: :reverse} %>
+  <h1 id="pageTitle" class><%= t('.todo') %></h1>
+  <%= link_to I18n.t('.edit'), edit_todo_path(@todo), class: 'ui-btn-right' %>
+</div>
+
 <p>
   <b><%= t('.title') %>:</b>
   <%= @todo.title %>
@@ -16,9 +21,8 @@
 
 <p>
   <b><%= t('.done') %>:</b>
-  <%= t(".#{@todo.done}") %>
+  <% if @todo.done == true %>
+  <a data-icon="check" data-iconpos="notext" data-role="button" data-inline="true" >done!</a>
+  <% end %>
 </p>
 
-
-<%= link_to I18n.t('.edit'), edit_todo_path(@todo), data: {ajax: false} %> |
-<%= link_to I18n.t('.back'), todos_path, data: {ajax: false} %>

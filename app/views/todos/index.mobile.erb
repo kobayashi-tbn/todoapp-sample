@@ -1,8 +1,16 @@
-
-  <div title='Todo' id="main" class="panel" selected="true">This is a basic skeleton jqUi sample</div>
+<div data-role="header" id="header">
+  <h1 id="pageTitle" class>Todo</h1>
+  <%= link_to t('.new_todo'), new_todo_path, class: 'ui-btn-right', data: {role: :button, icon: :plus, iconpos: :notext, transition: :pop} %>
+</div>
+<div id="content">
 
   <%= render 'todos' %>
 
-<br />
-<%= link_to content_tag(:span, '', class: "ui-icon ui-icon-plusthick") + t('.new_todo').html_safe, new_todo_path,
-            data: {ajax: false} %>
+<div>
+  <div data-role="footer" id="footer">
+  <p>
+    <% if current_user %>
+        <%= link_to I18n.t('.sign_out'), destroy_user_session_path(mobile: 0), :method => 'delete', class: "sign-out", confirm: I18n.t('.are_you_sure?'), data: {role: :button} %>
+    <% end %>
+  </p>
+  </div>

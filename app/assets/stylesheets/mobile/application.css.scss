@@ -9,17 +9,38 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- * require ./jquery-mobile/jquery.mobile-1.2.0
- * require ./mobiscroll/mobiscroll-2.2.custom.min
+ *= require ./jquery-mobile/jquery.mobile-1.2.0
+ *= require ./mobiscroll/mobiscroll-2.2.custom.min
  * require_tree .
  */
 
 .sign-out {
   //margin-left: auto;
   position: static;
+  margin-left: 0;
+  float: left;
+}
+
+.back-button {
+  //margin-left: auto;
+  position: static;
+  margin-left: 0;
+  float: left;
+}
+
+.edit-button {
+  //margin-left: auto;
+  position: static;
   margin-right: 0;
   float: right;
 }
+
+.add-button {
+   //margin-left: auto;
+   position: static;
+   margin-right: 0;
+   float: right;
+ }
 
 //.ua-type {
 //  margin-left: auto;

@@ -1,6 +1,5 @@
-<h1>Editing todo</h1>
-
+<div data-role="header" id="header">
+  <%= link_to 'Back', todos_path, class: 'ui-btn-left', data: {role: :button, icon: 'arrow-l',transition: :slide, direction: :reverse} %>
+  <h1 id="pageTitle" class>Editing Todo</h1>
+</div>
 <%= render 'form' %>
-
-<%= link_to 'Show', @todo, data: {ajax: false} %> |
-<%= link_to 'Back', todos_path, data: {ajax: false} %>
