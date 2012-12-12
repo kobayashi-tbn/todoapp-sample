@@ -11,7 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-// require ./custom
+//= require ./custom
 //= require ./jquery-mobile/jquery.mobile-1.2.0
 //= require jquery_ujs
 // require jq.mobi
@@ -25,10 +25,9 @@
 //
 //});
 
-$(document).ready(function(){
-    //create a datepicker with default settings
+//$(document).ready(function(){
+$('.ui-page').live('pageinit', function(){
+    //create a datepicker wsith default settings
     $("#scroller").scroller({ preset : 'date', dateFormat : 'yy-mm-dd',  dateOrder : 'yymmd' });
 });
-
-
 
