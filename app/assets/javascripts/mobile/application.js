@@ -27,6 +27,8 @@
 
 //$(document).ready(function(){
 $('.ui-page').live('pageinit', function(){
+//    alert( 'This page was just enhanced by jQuery Mobile!' );
+    var i; i = 0;
     //create a datepicker wsith default settings
     $("#scroller").scroller({ preset : 'date', dateFormat : 'yy-mm-dd',  dateOrder : 'yymmd' });
 });
