@@ -1,6 +1,8 @@
 <div data-role="header" id="header">
   <h1 id="pageTitle" class>Editing Todo</h1>
-  <%= link_to 'Back', todos_path, class: 'ui-btn-left', data: {role: :button, icon: 'arrow-l',transition: :slide, direction: :reverse} %>
+  <%= link_to 'Back', todos_path, class: 'ui-btn-left', data: {role: :button, icon: 'arrow-l', iconpos: :notext, transition: :slide, direction: :reverse} %>
 
 </div>
-<%= render 'form' %>
+<div id="content">
+  <%= render 'form' %>
+</div>

@@ -1,8 +1,15 @@
-<h1>Home#index</h1>
-<% if current_user %>
-  <%= link_to 'Sign-out', destroy_user_session_path, :method => 'delete' %>
-  <hr/>
-  <%= link_to 'Todo App', todos_path %>
-<% else %>
-  <%= link_to 'Sgin-in', user_session_path %>
-<% end %>
+<div data-role="header" id="header">
+  <h1 id="pageTitle" class>Home</h1>
+  <% if current_user %>
+    <%= link_to I18n.t('.sign_out'), destroy_user_session_path(mobile: 0), :method => 'delete', class: 'ui-btn-right', confirm: I18n.t('.are_you_sure?'), data: {role: :button} %>
+  <% else %>
+    <%= link_to 'Sgin-in', user_session_path, class: 'ui-btn-right', data: {role: :button} %>
+  <% end %>
+</div>
+<div id="content">
+  <ul data-role="listview">
+    <% if current_user %>
+      <li><%= link_to 'Todo App', todos_path, data: {transition: :slide} %></li>
+    <% end %>
+  </ul>
+</div>

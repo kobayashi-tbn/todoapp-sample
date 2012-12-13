@@ -1,12 +1,10 @@
 <div id="scroller-page">
 <div data-role="header" id="header">
   <h1 id="pageTitle">New Todo</h1>
-  <%= link_to 'Back', todos_path, class: 'ui-btn-left', data: {role: :button, icon: 'arrow-l',transition: :flip} %>
+  <%= link_to 'Back', todos_path, class: 'ui-btn-left', data: {role: :button, icon: 'arrow-l', iconpos: :notext, transition: :flip} %>
 
 </div>
 <div id="content">
-
   <%= render 'form' %>
-
 <div>
 </div>

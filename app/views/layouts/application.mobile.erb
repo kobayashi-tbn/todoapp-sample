@@ -50,7 +50,9 @@
 <!-- p class="notice" id="notice"><%#=notice%></p -->
 <!-- p class="alert"><%#=alert%></p -->
 <%= yield %>
+<div data-role="footer" id="footer">
+  <%= link_to 'PC', {mobile: 0}, class: :button, data: {ajax: false} %>
 
-    <%= link_to 'PC', {mobile: 0}, class: 'icon', data: {ajax: false} %>
+</div>
 </body>
 </html>

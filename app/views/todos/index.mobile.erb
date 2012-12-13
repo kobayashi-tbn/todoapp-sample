@@ -1,16 +1,8 @@
 <div data-role="header" id="header">
   <h1 id="pageTitle" class>Todo</h1>
+  <%= link_to 'Home', root_path, class: 'ui-btn-left', data: {role: :button, icon: :home, iconpos: :notext, transition: :slide, direction: :reverse} %>
   <%= link_to t('.new_todo'), new_todo_path, class: 'ui-btn-right', data: {role: :button, icon: :plus, iconpos: :notext, transition: :pop} %>
 </div>
 <div id="content">
-
   <%= render 'todos' %>
-
 <div>
-  <div data-role="footer" id="footer">
-  <p>
-    <% if current_user %>
-        <%= link_to I18n.t('.sign_out'), destroy_user_session_path(mobile: 0), :method => 'delete', class: "sign-out", confirm: I18n.t('.are_you_sure?'), data: {role: :button} %>
-    <% end %>
-  </p>
-  </div>
