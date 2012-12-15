@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
     session[:mobile_param] = params[:mobile] if params[:mobile]
     #request.format = :mobile if mobile_device?
     if mobile_device?
-      if "2" == params[:mobile]
+      if "2" == session[:mobile_param]
         request.format = :mobile
       else
         request.format = :mobi
