@@ -1,0 +1,31 @@
+// Place all the styles related to the todos controller here.
+// They will automatically be included in application.css.scss.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div#todonav ul{
+  margin: 0;
+  padding: 0;
+  float: left;
+  position: relative;
+  list-style-type: none;
+
+  li {
+    float: left;
+    position: relative;
+    width:200px;
+    margin: 0 0 0 0px;
+    display: block;
+    list-style-type: none;
+
+    a {
+      display: block;
+      list-style-type: none;
+
+    }
+  }
+}
+
+div#todolist {
+  float: left;
+  width: 100%;
+}

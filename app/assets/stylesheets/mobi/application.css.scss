@@ -1,0 +1,106 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ * require ./jquery-mobile/jquery.mobile-1.2.0
+ * require ./mobiscroll/mobiscroll-2.2.custom.min
+ *= require_tree .
+ */
+
+// ref http://www.jqmobi.com/documentation.php#tips/tips_hideheader
+//#header {
+//  display: none;
+//}
+
+
+.sign-out {
+  //margin-left: auto;
+  position: static;
+  margin-left: 0;
+  float: left;
+}
+
+.back-button {
+  //margin-left: auto;
+  position: static;
+  margin-left: 0;
+  float: left;
+}
+
+.edit-button {
+  //margin-left: auto;
+  position: static;
+  margin-right: 0;
+  float: right;
+}
+
+.add-button {
+   //margin-left: auto;
+   position: static;
+   margin-right: 0;
+   float: right;
+ }
+
+//.ua-type {
+//  margin-left: auto;
+//  margin-right: 50px;
+//  text-align: center;
+//}
+//
+//body {
+//  background-color: #4B7399;
+//  /*background-color: #555;*/
+//  font-family: Verdana, Helvetica, Arial;
+//  font-size: 14px;
+//  color: #678
+//}
+//
+//a img {
+//  border: none;
+//}
+//
+//a {
+//  color: #0000AA;
+//  text-decoration: none;
+//  &:hover {
+//    color: #FFF;
+//    background-color: #666;
+//  }
+//}
+//
+//.a-menu {
+//  color: #666;
+//  &:hover {
+//    color: #FFF;
+//    background-color: #666;
+//  }
+//}
+//
+//table.todo-list {
+//  width: 800px;
+//  th.description {
+//    width: 70%;
+//  }
+//}
+//
+//.clear {
+//  clear: both;
+//  height: 0;
+//  overflow: hidden;
+//}
+//
+//#container {
+//  width: 840px;
+//  margin: 0 auto;
+//  background-color: #FFF;
+//  padding: 20px 40px;
+//  border: solid 1px black;
+//  margin-top: 20px;
+//}
