@@ -2,30 +2,37 @@
 // They will automatically be included in application.css.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-div#todonav ul{
+ul#todonav {
   margin: 0;
   padding: 0;
-  float: left;
-  position: relative;
-  list-style-type: none;
+  //float: left;
+  //position: static;
+  //list-style-type: nones  ;
+  height:31px;
 
   li {
-    float: left;
-    position: relative;
-    width:200px;
-    margin: 0 0 0 0px;
-    display: block;
-    list-style-type: none;
+    //position: relative;
+    width:60px;
+    height:30px;
+    margin: 0 0 0 1px;
+
+    display: inline-table;
+    //list-style-type: none;
+    overflow: hidden;
 
     a {
-      display: block;
-      list-style-type: none;
-
+      //display: block;
+      height:30px;
+      vertical-align: middle;
+      margin-top: 0;
+      padding: 0;
+      font-size: 12px;
+      overflow: hidden;
     }
   }
 }
 
-div#todolist {
-  float: left;
+ul#todolist {
+  //float: right;
   width: 100%;
 }
