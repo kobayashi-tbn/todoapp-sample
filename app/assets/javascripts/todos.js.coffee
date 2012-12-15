@@ -4,6 +4,7 @@
 
 $.rails.allowAction = (link) ->
   return true unless link.attr('data-confirm')
+  link.attr('message', link.attr('data-confirm'))
   $.rails.showConfirmDialog(link) # look bellow for implementations
   false # always stops the action since code runs asynchronously
 
