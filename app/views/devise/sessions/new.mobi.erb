@@ -1,0 +1,24 @@
+  <div title="sign-in" class="panel" id="main" selected="true">
+
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+        <fieldset>
+          <div><%= f.label :login %><br />
+            <%= f.text_field :login %></div>
+
+          <div><%= f.label :password %><br />
+            <%= f.password_field :password %></div>
+
+          <% if devise_mapping.rememberable? -%>
+              <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+          <% end -%>
+
+          <div><%= f.submit "Sign in" %></div>
+    <% end %>
+    </fieldset>
+  </div>
+<%#= render "devise/shared/links" %>
+
+  <header id="custom_header">
+    <h1>Sign-in</h1>
+    <%= link_to 'Home', root_path, class: 'button icon home', style: 'float:left' %>
+  </header>
