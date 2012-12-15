@@ -1,0 +1,35 @@
+  <%= form_for(@todo) do |f| %>
+  <% if @todo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
+
+      <ul>
+      <% @todo.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description, rows: "1"%>
+  </p>
+  <p>
+    <%#= f.label :limit_on %><br />
+    <%#= f.text_field :limit_on, id: 'scroller', readonly: 'readonly' %>
+
+    <%= f.label :limit_on %><br />
+    <%= f.text_field :limit_on,type: :date, class: 'jq-ui-forms'%>
+  </p>
+  <p>
+    <%= f.check_box :done ,{}, true, "0" %>
+    <%= f.label :done %>
+  </p>
+  <p class="actions">
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,30 @@
+<div class="panel" id="main" data-header="custom_header">
+<p>
+  <b><%= t('.title') %>:</b>
+  <%= @todo.title %>
+</p>
+
+<p>
+  <b><%= t('.description') %>:</b>
+  <%= @todo.description %>
+</p>
+
+<p>
+  <b><%= t('.limit_on') %>:</b>
+  <%= @todo.limit_on %>
+</p>
+
+<p>
+  <b><%= t('.done') %>:</b>
+  <% if @todo.done == true %>
+  <a data-icon="check" data-iconpos="notext" data-role="button" data-inline="true" >done!</a>
+  <% end %>
+</p>
+</div>
+
+<header id="custom_header">
+  <h1><%= t('.todo') %></h1>
+  <%= link_to 'Back', todos_path, id: "backButton", class: 'button', data: {ignore: true} %>
+  <%= link_to I18n.t('.edit'), edit_todo_path(@todo), class: 'button icon pencil', style: "float:right", data: {ignore: true} %>
+</header>
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todoapp</title>
+  <%= stylesheet_link_tag    "mobi/application", media: "all" %>
+  <link rel="stylesheet" type="text/css" href="//cdn.jqmobi.com/themes/icons.css" />
+  <link rel="stylesheet" type="text/css" href="//cdn.jqmobi.com/themes/jq.ui.carbon.css" title="eco" />
+  <%= javascript_include_tag "mobi/application" %>
+  <!--
+  -->
+  <%= csrf_meta_tags %>
+
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta http-equiv="Pragma" content="no-cache">
+
+  <script type="text/javascript">
+      $.ui.ready(
+              function(){
+//                  $.ui.toggleHeaderMenu(false); //force hide
+//                  $('#content').add($('custom_header'));
+              }
+      );
+
+  </script>
+
+<!--</head>-->
+<body>
+<!-- p class="notice" id="notice"><%#=notice%></p -->
+<!-- p class="alert"><%#=alert%></p -->
+<%= yield %>
+<div id="navbar">
+  <%= link_to 'PC', {mobile: 0}, class: :button, data: {ajax: false, ignore: true, confirm: I18n.t('.are_you_sure?')} %>
+  <%= link_to 'jqm', {mobile: 2}, class: :button, data: {ajax: false, ignore: true, confirm: I18n.t('.are_you_sure?')} %>
+</div>
+
+</body>
+</html>
