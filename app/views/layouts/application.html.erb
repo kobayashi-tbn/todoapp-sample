@@ -12,7 +12,7 @@
 
 <% if current_user %>
     <div class="sign-out">
-    <%= link_to I18n.t('.sign_out'), destroy_user_session_path, :method => 'delete',message: I18n.t('.are_you_sure?'), data: {confirm: 'Are you sure?'} %>
+    <%= link_to I18n.t('.sign_out'), destroy_user_session_path, :method => 'delete', data: {confirm: I18n.t('.are_you_sure?')} %>
     </div>
 <% end %>
 <p class="notice" id="notice"><%=notice%></p>
@@ -20,7 +20,8 @@
 <%= yield %>
 
 <div class="ua-type">
-<%= link_to 'Mobile', {mobile: 1}, data: {ajax: false} %>
+  <%= link_to 'Mobile', {mobile: 1}, data: {ajax: false} %>
+  <%= link_to 'jqm', {mobile: 2}, data: {ajax: false} %>
 </div>
 </div>
 </body>
