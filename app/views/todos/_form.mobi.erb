@@ -12,11 +12,11 @@
   <% end %>
   <p>
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'jq-ui-forms' %>
   </p>
   <p>
     <%= f.label :description %><br />
-    <%= f.text_area :description, rows: "1"%>
+    <%= f.text_area :description, rows: "1", class: 'jq-ui-forms' %>
   </p>
   <p>
     <%#= f.label :limit_on %><br />
@@ -26,10 +26,10 @@
     <%= f.text_field :limit_on,type: :date, class: 'jq-ui-forms'%>
   </p>
   <p>
-    <%= f.check_box :done ,{}, true, "0" %>
+    <%= f.check_box :done ,{ class: 'jq-ui-forms'}, true, false %>
     <%= f.label :done %>
   </p>
   <p class="actions">
-    <%= f.submit %>
+    <%= f.submit @todo.new_record? ? 'Create' : 'Update', class: 'button' %>
   </p>
 <% end %>

@@ -25,6 +25,6 @@
 <header id="custom_header">
   <h1><%= t('.todo') %></h1>
   <%= link_to 'Back', todos_path, id: "backButton", class: 'button', data: {ignore: true} %>
-  <%= link_to I18n.t('.edit'), edit_todo_path(@todo), class: 'button icon pencil', style: "float:right", data: {ignore: true} %>
+  <%= link_to I18n.t('.edit'), edit_todo_path(@todo), class: 'button icon pencil', data: {ignore: false}, style: "float:right" %>
 </header>
 

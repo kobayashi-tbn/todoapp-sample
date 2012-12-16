@@ -1,7 +1,7 @@
-    <div class="panel" id="main" data-header="custom_header">
+    <div class="panel" id="main" data-header="custom_header" js-scrolling="yes" style="overflow: hidden;">
       <%= render 'form' %>
     </div>
   <header id="custom_header">
     <h1>New Todo</h1>
-    <%= link_to "Back", todos_path, class: 'button icon left', id: 'backButton' %>
+    <%= link_to "Back", todos_path, class: 'button', id: 'backButton', data: {ignore: true} %>
   </header>
