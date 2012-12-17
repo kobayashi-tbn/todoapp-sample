@@ -1,7 +1,7 @@
   <div class="panel" id="main" data-header="custom_header">
     <ul>
       <% if current_user %>
-          <li><%= link_to 'Todo App', todos_path, data: {ignore: true} %></li>
+          <li><%= link_to 'Todo App', todos_path, data: {ignore: false} %></li>
       <% end %>
     </ul>
 

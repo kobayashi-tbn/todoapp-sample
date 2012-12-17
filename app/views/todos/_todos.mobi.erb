@@ -1,7 +1,7 @@
     <ul id="todonav">
-      <li><%= link_to "#{t('.show_all')} (#{@size_all})",  {todo_list_cond: :all} %></li>
-      <li><%= link_to "#{t('.only_incomplete')} (#{@size_incomplete})", {todo_list_cond: :incomplete} %></li>
-      <li><%= link_to "#{t('.only_complete')} (#{@size_complete})", {action: :index, todo_list_cond: :complete} %></li>
+      <li><%= link_to "#{t('.show_all')} (#{@size_all})",  {todo_list_cond: :all}, data: {ignore: false}  %></li>
+      <li><%= link_to "#{t('.only_incomplete')} (#{@size_incomplete})", {todo_list_cond: :incomplete}, data: {ignore: false}  %></li>
+      <li><%= link_to "#{t('.only_complete')} (#{@size_complete})", {action: :index, todo_list_cond: :complete}, data: {ignore: false} %></li>
     </ul>
     <ul id="todolist">
       <% @todos.each do |todo| %>
