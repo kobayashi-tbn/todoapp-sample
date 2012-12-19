@@ -1,18 +1,20 @@
-  <div class="panel" id="main" data-header="custom_header">
+  <div class="panel" id="main">
+    <header>
+      <h1>Home</h1>
+      <% if current_user %>
+          <%= link_to I18n.t('.sign_out'), destroy_user_session_path(mobile: 1), style: "float:left", data: {ignore: true} , method: :delete, class: 'button', confirm: I18n.t('.are_you_sure?') %>
+      <% else %>
+          <%= link_to 'Sgin-in', user_session_path, class: 'button', style: "float:right;", data: {ignore: true, 'refresh-ajax' => true} %>
+      <% end %>
+    </header>
     <ul>
       <% if current_user %>
-          <li><%= link_to 'Todo App', todos_path, data: {ignore: false} %></li>
+          <li><%= link_to 'Todo App', todos_path, data: {ignore: true, 'refresh-ajax' => true} %></li>
       <% end %>
     </ul>
 
   </div>
 
-  <header id="custom_header">
-    <h1>Home</h1>
-    <% if current_user %>
-        <%= link_to I18n.t('.sign_out'), destroy_user_session_path(mobile: 1), style: "float:left", data: {ignore: true} , method: :delete, class: 'button', confirm: I18n.t('.are_you_sure?') %>
-    <% else %>
-        <%= link_to 'Sgin-in', user_session_path, class: 'button', style: "float:right;", data: {ignore: true}  %>
-    <% end %>
-  </header>
+
+
 
